@@ -4,6 +4,9 @@ describe('set', function() {
   beforeEach(function() {
     set = Set();
   });
+  it('should return an object when Set() is called', function() {
+    expect(set).to.be.a('object');
+  });
 
   it('should have methods named "add", "contains", and "remove"', function() {
     expect(set.add).to.be.a('function');

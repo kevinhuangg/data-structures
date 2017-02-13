@@ -34,7 +34,7 @@ var BSTmethods = {
       }
     };
     searchTree(this);
-    // return undefined;
+    //O(log n) - logarithmic
   },
 
   contains: function(val) { //function: accepts a value and returns a boolean 
@@ -79,6 +79,7 @@ var BSTmethods = {
     };
     checkTree(this);
     return flag;
+    //O(log n) - logarithmic
 
   },
 
@@ -98,8 +99,8 @@ var BSTmethods = {
     };
 
     checkChildren(this);
-  },
-  
+  }
+  //O(n) - linear
 };
 
 

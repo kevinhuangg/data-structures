@@ -1,7 +1,7 @@
 var LinkedList = function() {
   var list = {};
   list.head = null;
-  list.tail = null;
+  list.tail = null; 
 
   list.addToTail = function(value) {
     var node = new Node(value);
@@ -11,6 +11,8 @@ var LinkedList = function() {
       this.head.next = node;
     }
     this.tail = node;
+    
+    //O(1) - constant
   };
 
   list.removeHead = function() {
@@ -19,6 +21,8 @@ var LinkedList = function() {
       this.head = oldHead.next;
     }
     return oldHead.value;
+    
+    //O(1) - constant
   };
 
   list.contains = function(target, node) {
@@ -30,18 +34,23 @@ var LinkedList = function() {
       return false;           //has been found return false
     }
     return this.contains(target, node.next);
-
-    // var pointer = this.head;
-
-    // while (pointer) {
-    //   if (pointer.value === target) {
-    //     return true;
-    //   }
-    //   pointer = pointer.next;
-    // }
-
-    // return false;
+    //O(n) - linear
   };
+  
+  list.find = function(value) {
+    var currentNode = this.head
+    while (currentNode.value !== value){
+      currentNode = currentNode.next;
+    }
+    return currentNode
+  }
+  
+  list.insert = function(value, prevValue) {
+    var newNode = new Node(value);
+    var oldNode = this.find(prevValue);
+    newNode.next = oldNode.next;
+    oldNode.next = newNode;
+  }
 
 
   return list;

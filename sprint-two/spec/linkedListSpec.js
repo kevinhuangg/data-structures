@@ -50,6 +50,13 @@ describe('linkedList', function() {
     linkedList.removeHead();
     expect(linkedList.contains(4)).to.equal(false);
   });
+  
+  it('should be able to insert a new value after an exsiting value', function() {
+    linkedList.addToTail(4);
+    linkedList.addToTail(5);
+    linkedList.insert(6,4);
+    expect(linkedList.contains(6)).to.equal(true);
+  });
 
   // add more tests here to test the functionality of linkedList
 });
