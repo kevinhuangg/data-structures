@@ -14,6 +14,8 @@ var treeMethods = {};
 treeMethods.addChild = function(value) {
   var treeNode = new Tree(value);
   this.children.push(treeNode);
+  
+  //O(1) - constant
 };
 
 treeMethods.contains = function(target) {
@@ -32,7 +34,24 @@ treeMethods.contains = function(target) {
   };
   checkTree(this);
   return found;
+  //O(n) - linear
 };
+treeMethods.remove = function(target) {
+  if (this.children) {
+    for (var i = 0; i < this.children.length; i++) {
+      var child = this.children[i]
+      if (child.value === target) {
+        this.children.splice(i,1);
+        return ;
+      }
+      child.remove(target);
+    }
+  }
+  // O(n) - linear
+};
+
+
+
 
 
 

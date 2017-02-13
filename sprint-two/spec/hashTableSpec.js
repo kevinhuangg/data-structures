@@ -6,6 +6,9 @@ describe('hashTable', function() {
   beforeEach(function() {
     hashTable = new HashTable();
   });
+  it('should return an array object when HashTable() is invoked', function() {
+    expect(hashTable).to.be.a('object');
+  });
 
   it('should have methods named "insert", "remove", and "retrieve', function() {
     expect(hashTable.insert).to.be.a('function');

@@ -17,7 +17,7 @@ HashTable.prototype.insert = function(k, v) {
   } else if (this._storage[index][1][0] === k) {
     this._storage[index][1][1] = v;
   }
-
+  //O(1) - constant
 };
 
 HashTable.prototype.retrieve = function(k) {
@@ -28,7 +28,7 @@ HashTable.prototype.retrieve = function(k) {
   if (this._storage[index][0] && this._storage[index][1][0] === k) {
     return this._storage[index][1][1];
   }
-
+  //O(1) - constant
 };
 
 HashTable.prototype.remove = function(k) {
@@ -36,7 +36,7 @@ HashTable.prototype.remove = function(k) {
   this._storage[index] = this._storage[index].filter(function(val) {
     return val[0] !== k;
   });
-
+  //O(n) - linear
 };
 
 
